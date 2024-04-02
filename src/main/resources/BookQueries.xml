@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+    <query name="findBook">
+        <![CDATA[
+         SELECT b FROM Book b WHERE b.id = :id AND :price >= 0
+        ]]>
+    </query>
+</queries>

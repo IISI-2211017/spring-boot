@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.Aaab;
 import com.example.service.AaabService;
-
+//JDBC
 @RestController
 public class AaabController {
 
