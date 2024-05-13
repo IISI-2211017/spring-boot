@@ -1,7 +1,6 @@
 package com.example.model;
 
 import org.springframework.stereotype.Component;
-import jakarta.persistence.Entity;
 
 @Component
 public class Aaab {

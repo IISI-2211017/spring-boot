@@ -4,11 +4,6 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Update;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
 import com.multiDB.b.entity.Book;
 
 public interface BookService {

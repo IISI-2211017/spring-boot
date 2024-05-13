@@ -15,8 +15,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.multiDB.a.entity.*;
-import com.multiDB.a.dao.*;
+import com.multiDB.a.dao.ProductDao;
+import com.multiDB.a.entity.Product;
 
 @Configuration
 @EnableJpaRepositories( //
