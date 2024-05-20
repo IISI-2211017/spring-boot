@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %m%n"/>
+        </Console>
+		<!--${date:yyyy-MM}的寫法只會抓server run的時間，如果跨月份就抓不到最新的月份 -->
+	    <RollingFile name="springBootLog" fileName="/springBootLog/iisi-log.log"
+	                 filePattern="springBootLog/%d{yyyy-MM-dd}/iisi-log-%d{yyyy-MM-dd}-%i.log.zip">
+	        <PatternLayout pattern="%d [%t][%-5p] %m%n" />
+	        <Policies>
+	            <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+	            <SizeBasedTriggeringPolicy size="50 MB" />
+	        </Policies>
+	        <DefaultRolloverStrategy compressionLevel="9" max="100" />
+	    </RollingFile>
+   	</Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="springBootLog"/>
+        </Root>
+        <logger name="org.hibernate.SQL" level="debug"/>
+		<logger name="org.hibernate.type.descriptor.sql" level="trace"/>
+		
+        <logger name="com.multiDB.controller" level="debug" />
+    </Loggers>
+</Configuration>

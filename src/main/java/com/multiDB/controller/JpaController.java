@@ -1,13 +1,16 @@
 package com.multiDB.controller;
 
+import org.slf4j.Logger;
 import java.util.List;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Application;
 import com.multiDB.a.entity.Product;
 import com.multiDB.b.entity.Book;
 import com.multiDB.service.BookService;
@@ -17,6 +20,9 @@ import com.multiDB.service.RollbackService;
 @RestController
 @RequestMapping("/jap/multiDB")
 public class JpaController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(JpaController.class);
+	
 	@Autowired
 	private BookService bookService;
 	
@@ -28,7 +34,10 @@ public class JpaController {
 	
 	@PostMapping("/findAllProList")
 	public List<Product> findAllProList() {
+		logger.info("info測試");
+		logger.debug("debug測試");
 		return productService.findAll();
+		
 	}
 	
 	@PostMapping("/findProduct")
