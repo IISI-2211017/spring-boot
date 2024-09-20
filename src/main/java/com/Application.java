@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-// spring 會自動掃描com底下的所有package
+// spring 會自動掃描com底下的所有package 1
 //@ComponentScan(basePackages = "com.example")
 //@ComponentScan(basePackages = "com.jpa")
 public class Application {
